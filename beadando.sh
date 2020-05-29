@@ -1,9 +1,9 @@
 #!/bin/bash
 clear
 
-echo  "Etterem V1.0" ; sleep 2 ;
-echo  "Made by: Vasas Csaba" ; sleep 2 ;
-clear
+echo  "Etterem V1.0" ; sleep 1 ;
+echo  "Made by: Vasas Csaba" ; sleep 1 ;
+
 
 while getopts 'fn' nem
 do
@@ -15,15 +15,23 @@ done
 
 echo -n "Adja meg a nevet: "
 read n
-clear
 
-echo 
-    echo "	Koszontjuk ettermunkben, $n!"
-echo
 
 
 echo -n "Adja meg az eletkorat: "
 read e
+
+echo -n "Adja meg az email cimet: "
+read email
+
+clear
+echo 
+echo "	Koszontjuk ettermunkben, $n"
+echo
+
+
+
+sleep 2;
 
 
 #if ciklus kezdete, itt kezdodik a felnott if
@@ -40,7 +48,7 @@ echo "		 |     |  | |   "
 echo "		 |     |  - -  "
 
 
-
+sleep 2;
 echo 
 echo  "Kerjuk valasszon a foetelek kozul: (1-5)"
 
@@ -71,10 +79,10 @@ case $foetel in
     4) echo "Paprikas" ;;
     5) echo "Gyumolcsleves" ;;
 esac
-
+sleep 2;
 echo
 echo  "	Kivalo valasztas, $n!"
-
+sleep 1;
 echo
 
 echo "Kerjuk valasszon egy italt az etele melle: (1-6)"
@@ -107,7 +115,7 @@ case $ital in
     5) echo "Columbina" ;;
     6) echo "Pine colada" ;;
 esac
-
+sleep 2;
 echo
 echo "Szeretne desszertet? (igen / nem)"
 read kerdes
@@ -142,26 +150,28 @@ case $desszert in
     4) echo "Fagylalt" ;;
     5) echo "Columbo kope" ;;
 esac
-
+sleep 2;
 else
     echo
 
 fi
     echo
     echo "		Koszonjuk rendeleset!"
+sleep 2;
     echo "		Rendeleserol emailben ertesitjuk, amint elkeszult!"
-    echo
+sleep 1;    
+echo
 
     #insert email kuldo progi here es stickrajz
 
-
+sendmail "$email" < email.txt
 
                     
 
 
 
 
-		       #innentol jon a gyerek, copyright v.cs.
+		       #innentol jon a gyerek
 
 
 
@@ -170,14 +180,14 @@ fi
 else 
     echo
     echo "	18 even aluli vagy, ezert gyermek asztalt kapsz."
-
+sleep 2;
 echo "	         	        "
 echo "		       	       "
 echo "		    \      o   "
 echo "		 |-----|  /_\ "
 echo "		 |     |  | |   "
 echo "		 |     |  - -  "
-
+sleep 2;
 echo 
 echo  "Kerjuk valasszon a foetelek kozul: (1-5)"
 
@@ -207,9 +217,8 @@ case $foetel in
     5) echo "Gyumolcsleves" ;;
 esac
 
-echo
-echo  "Kituno valasztas, $n!"
-
+echo; sleep 2;
+echo  "Kituno valasztas, $n!"; sleep 1;
 echo
 
 echo "Kerjuk valassz egy italt az etele melle: (1-6)"
@@ -243,8 +252,7 @@ case $ital in
     6) echo "Almale" ;;
 esac
 
-echo
-
+echo; sleep 2;
 echo "Szeretnel desszertet? (igen / nem)"
 read kerdes
 
@@ -278,19 +286,19 @@ case $desszert in
     3) echo "Palacsinta" ;;
     4) echo "Fagylalt" ;;
     5) echo "Columbo kope" ;;
-esac
-
+esac; sleep 2;
 else
 
     echo 
 
 fi
     echo
-    echo "		Koszonjuk rendelesed!"
-    echo "		Rendelesedrol emailben ertesitunk, amint elkeszult!"
+    echo "		Koszonjuk rendelesed!"; sleep 1;
+    sleep 1;
+    echo "		Rendelesedrol emailben ertesitunk, amint elkeszult!"; sleep 1;
     echo
     #insert email kuldo progi here es stick rajz
-
+sendmail  $email < email.txt
 
 
 
