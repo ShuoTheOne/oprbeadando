@@ -18,7 +18,7 @@ read n
 clear
 
 echo 
-    echo "		Koszontjuk ettermunkben, $n!"
+    echo "	Koszontjuk ettermunkben, $n!"
 echo
 
 
@@ -148,7 +148,7 @@ else
 
 fi
     echo
-    echo "			Koszonjuk rendeleset!"
+    echo "		Koszonjuk rendeleset!"
     echo "		Rendeleserol emailben ertesitjuk, amint elkeszult!"
     echo
 
@@ -286,7 +286,7 @@ else
 
 fi
     echo
-    echo "			Koszonjuk rendelesed!"
+    echo "		Koszonjuk rendelesed!"
     echo "		Rendelesedrol emailben ertesitunk, amint elkeszult!"
     echo
     #insert email kuldo progi here es stick rajz
