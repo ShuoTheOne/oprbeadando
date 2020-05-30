@@ -82,7 +82,8 @@ esac
 sleep 2;
 echo
 echo  "	Kivalo valasztas, $n!"
-sleep 1;
+sleep 2;
+clear
 echo
 
 echo "Kerjuk valasszon egy italt az etele melle: (1-6)"
@@ -116,6 +117,7 @@ case $ital in
     6) echo "Pine colada" ;;
 esac
 sleep 2;
+clear
 echo
 echo "Szeretne desszertet? (igen / nem)"
 read kerdes
@@ -155,12 +157,68 @@ else
     echo
 
 fi
-    echo
-    echo "		Koszonjuk rendeleset!"
-sleep 2;
-    echo "		Rendeleserol emailben ertesitjuk, amint elkeszult!"
-sleep 1;    
+clear
+ # rendeles veglegesites
+
+
+echo 
+echo "			Rendeles veglegesitese: "
 echo
+
+echo -n "			Foetel: "
+case $foetel in    
+    1) echo "Ragu"  ;;
+    2) echo "Husleves"  ;;
+    3) echo "Columbo" ;;
+    4) echo "Paprikas" ;;
+    5) echo "Gyumolcsleves" ;;
+esac
+sleep 1;
+
+echo -n "			Ital: "
+case $ital in    
+    1) echo "Gyumolcsle"  ;;
+    2) echo "Sor"  ;;
+    3) echo "Tequila" ;;
+    4) echo "Bor" ;;
+    5) echo "Columbina" ;;
+    6) echo "Pine colada" ;;
+esac
+sleep 1;
+
+
+
+if [ "$kerdes" = "igen" ]; then
+echo -n "			Desszert: "
+case $desszert in    
+    1) echo "Pite"  ;;
+    2) echo "Somloi"  ;;
+    3) echo "Palacsinta" ;;
+    4) echo "Fagylalt" ;;
+    5) echo "Columbo kope" ;;
+esac
+
+else
+echo
+
+fi
+
+sleep 1;
+echo
+echo "Meg szeretne rendelni a kivalasztott menut? (igen/nem)"
+read veglegesit
+
+if [ "$veglegesit" = "igen" ]; then
+echo
+echo "Koszonjuk rendeleset!"
+sleep 2;
+echo "Rendeleserol emailben ertesitjuk, amint elkeszult!"
+sleep 1;
+echo
+
+else
+echo
+fi
 
     #insert email kuldo progi here es stickrajz
 
@@ -180,19 +238,18 @@ sendmail "$email" < email.txt
 else 
     echo
     echo "	18 even aluli vagy, ezert gyermek asztalt kapsz."
-sleep 2;
 echo "	         	        "
 echo "		       	       "
 echo "		    \      o   "
 echo "		 |-----|  /_\ "
 echo "		 |     |  | |   "
 echo "		 |     |  - -  "
-sleep 2;
+sleep 1;
 echo 
 echo  "Kerjuk valasszon a foetelek kozul: (1-5)"
 
 echo "	/	|----------------------|	"
-echo "	/	| 1)	Fozelek	       |	"
+echo "	/	| 1)	Dinofalatkak   |	"
 echo "	/	| 2)	Husleves       |	"
 echo "	/	| 3)	Columbo        |	"
 echo "	/	| 4)	Nokedli	       |	"
@@ -210,7 +267,7 @@ done
 
 echo -n "		A valasztott foeteled: "
 case $foetel in    
-    1) echo "Fozelek"  ;;
+    1) echo "Dinofalatkak"  ;;
     2) echo "Husleves"  ;;
     3) echo "Columbo" ;;
     4) echo "Nokedli" ;;
@@ -220,7 +277,7 @@ esac
 echo; sleep 2;
 echo  "Kituno valasztas, $n!"; sleep 1;
 echo
-
+clear
 echo "Kerjuk valassz egy italt az etele melle: (1-6)"
 
 echo "		|--------------------|"
@@ -253,9 +310,10 @@ case $ital in
 esac
 
 echo; sleep 2;
+clear
 echo "Szeretnel desszertet? (igen / nem)"
 read kerdes
-
+clear
 
 echo
 if [ "$kerdes" = "igen" ]; then
@@ -287,19 +345,77 @@ case $desszert in
     4) echo "Fagylalt" ;;
     5) echo "Columbo kope" ;;
 esac; sleep 2;
-else
 
-    echo 
+else
+echo
 
 fi
-    echo
-    echo "		Koszonjuk rendelesed!"; sleep 1;
-    sleep 1;
-    echo "		Rendelesedrol emailben ertesitunk, amint elkeszult!"; sleep 1;
-    echo
-    #insert email kuldo progi here es stick rajz
-sendmail  $email < email.txt
 
+clear
+ # rendeles veglegesites
+
+
+echo 
+echo "			Rendeles veglegesitese: "
+echo
+
+echo -n "			Foetel: "
+case $foetel in    
+    1) echo "Dinofalatkak"  ;;
+    2) echo "Husleves"  ;;
+    3) echo "Columbo" ;;
+    4) echo "Nokedli" ;;
+    5) echo "Gyumolcsleves" ;;
+esac
+sleep 1;
+
+echo -n "			Ital: "
+case $ital in    
+    1) echo "Kubu"  ;;
+    2) echo "Cappy"  ;;
+    3) echo "Lipton Tea" ;;
+    4) echo "Nestea" ;;
+    5) echo "Columbina JR" ;;
+    6) echo "Almale" ;;
+esac
+sleep 1;
+
+
+
+if [ "$kerdes" = "igen" ]; then
+echo -n "			Desszert: "
+case $desszert in    
+    1) echo "Pite"  ;;
+    2) echo "Somloi"  ;;
+    3) echo "Palacsinta" ;;
+    4) echo "Fagylalt" ;;
+    5) echo "Columbo kope" ;;
+esac
+
+else
+echo
+
+fi
+
+sleep 1;
+echo
+echo "Meg szeretned rendelni a kivalasztott menut? (igen/nem)"
+read veglegesit
+
+if [ "$veglegesit" = "igen" ]; then
+echo
+echo "Koszonjuk rendelesed!"
+sleep 2;
+echo "Rendelesedrol emailben ertesitunk, amint elkeszult!"
+sleep 1;
+echo
+
+else
+echo
+ #megirni a menu valtoztato dolgot meg ide
+
+
+fi
 
 
 
