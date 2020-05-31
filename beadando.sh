@@ -452,7 +452,7 @@ echo "		 |     |  | |   "
 echo "		 |     |  - -  "
 sleep 1;
 echo 
-echo  "Kerjuk valasszon a foetelek kozul: (1-5)"
+echo  "Kerlek valassz a foetelek kozul: (1-5)"
 
 echo "	/	|----------------------|	"
 echo "	/	| 1)	Dinofalatkak   |	"
@@ -484,7 +484,8 @@ echo; sleep 2;
 echo  "Kituno valasztas, $n!"; sleep 1;
 echo
 clear
-echo "Kerjuk valassz egy italt az etele melle: (1-6)"
+echo
+echo "Kerjuk valassz egy italt az eteled melle: (1-6)"
 
 echo "		|--------------------|"
 echo "		| 1)	Kubu	     |"
@@ -504,7 +505,7 @@ do
 echo  "		Adj meg 1-6ig szamot!"
 read ital
 done
-
+echo
 echo -n "		A valasztott italod: "
 case $ital in    
     1) echo "Kubu"  ;;
@@ -517,6 +518,7 @@ esac
 
 echo; sleep 2;
 clear
+echo
 echo "Szeretnel desszertet? (igen / nem)"
 read kerdes
 clear
@@ -562,7 +564,7 @@ clear
 
 
 echo 
-echo "			Rendeles veglegesitese: "
+echo "			Rendelesed veglegesitese: "
 echo
 
 echo -n "			Foetel: "
@@ -618,15 +620,219 @@ echo
 
 else
 echo
- #megirni a menu valtoztato dolgot meg ide
+ #itt kezdodik a modositas
 
+while [ "$veglegesit" = "nem" ]
+do  
+clear
+echo
+echo  "Min szeretnel valtoztatni? (Foetel / Ital / Desszert)"
+echo "	/	|--------------------|		/"
+echo "	/	| 	Foetel       |		/"
+echo "	/	| 	Ital         |		/"
+echo "	/	| 	Desszert     |		/"
+echo "	/	|____________________|		/"
+ 
+read valtoztat
+if [ "$valtoztat" = "Foetel" ]; then
+clear
+echo
+echo -n "			Jelenlegi kivalasztott foeteled: "
+case $foetel in    
+    1) echo "Dinofalatkak"  ;;
+    2) echo "Husleves"  ;;
+    3) echo "Columbo" ;;
+    4) echo "Nokedli" ;;
+    5) echo "Gyumolcsleves" ;;
+esac
+sleep 2;
+echo
+echo "Mire szeretned valtoztatni a foeteledet? (1-5)"
+
+echo "	/	|----------------------|	/"
+echo "	/	| 1)	Dinofalatkak   |	/"
+echo "	/	| 2)	Husleves       |	/"
+echo "	/	| 3)	Columbo        |	/"
+echo "	/	| 4)	Nokedli        |	/"
+echo "	/	| 5)	Gyumolcsleves  |	/"
+echo "	/	|______________________|	/"
+
+read foetel
+
+while [ "$foetel" -gt 5 ]
+do  
+echo  "Adj meg 1-5ig szamot!"
+read foetel
+done
+
+else
+echo 
+fi
+ 
+if [ "$valtoztat" = "Ital" ]; then
+clear
+echo
+echo -n "			Jelenlegi kivalasztott italod: "
+case $ital in    
+    1) echo "Kubu"  ;;
+    2) echo "Cappy"  ;;
+    3) echo "Lipton Tea" ;;
+    4) echo "Nestea" ;;
+    5) echo "Columbina JR" ;;
+    6) echo "Almale" ;;
+esac
+sleep 2;
+echo "Mire szeretned megvaltoztatni az italodat? (1-6)"
+
+echo "	/	|--------------------|		/"
+echo "	/	| 1)	Kubu	     |		/"
+echo "	/	| 2)	Cappy  	     |		/"
+echo "	/	| 3)	Lipton Tea   |		/"
+echo "	/	| 4)	Nestea 	     |		/"
+echo "	/	| 5)	Columbina JR |		/"
+echo "	/	| 6)	Almale       |		/"
+echo "	/	|____________________|		/"
+
+read ital
+
+while [ "$ital" -gt 6 ]
+do  
+echo  "Adj meg 1-6ig szamot!"
+read ital
+done
 
 fi
 
 
+if [ "$valtoztat" = "Desszert" ]; then
+clear
+echo
+echo -n "			Jelenlegi kivalasztott desszerted: "
+case $desszert in    
+    1) echo "Pite"  ;;
+    2) echo "Somloi"  ;;
+    3) echo "Palacsinta" ;;
+    4) echo "Fagylalt" ;;
+    5) echo "Columbo kope" ;;
+esac
+sleep 2;
+echo "Mire szeretned megvaltoztatni a desszerted? (1-5)"
 
+echo "	/	|--------------------|		/"
+echo "	/	| 1)	Pite         |		/"
+echo "	/	| 2)	Somloi       |		/"
+echo "	/	| 3)	Palacsinta   |		/"
+echo "	/	| 4)	Fagylalt     |		/"
+echo "	/	| 5)	Columbo kope |		/"
+echo "	/	|____________________|		/"
+
+read desszert
+
+while [ "$desszert" -gt 5 ]
+do  
+echo  "Adj meg 1-5ig szamot!"
+read desszert
+done
 
 fi
+
+sleep 1;
+clear
+echo
+echo "			Rendelesed veglegesitese: (igen/nem)"
+echo
+
+echo -n "			Foetel: "
+case $foetel in    
+    1) echo "Dinofalatkak"  ;;
+    2) echo "Husleves"  ;;
+    3) echo "Columbo" ;;
+    4) echo "Nokedli" ;;
+    5) echo "Gyumolcsleves" ;;
+esac
+sleep 1;
+
+echo -n "			Ital: "
+case $ital in    
+    1) echo "Kubu"  ;;
+    2) echo "Cappy"  ;;
+    3) echo "Lipton Tea" ;;
+    4) echo "Nestea" ;;
+    5) echo "Columbina JR" ;;
+    6) echo "Almale" ;;
+esac
+sleep 1;
+
+
+
+if [ "$kerdes" = "igen" ]; then
+echo -n "			Desszert: "
+case $desszert in    
+    1) echo "Pite"  ;;
+    2) echo "Somloi"  ;;
+    3) echo "Palacsinta" ;;
+    4) echo "Fagylalt" ;;
+    5) echo "Columbo kope" ;;
+esac
+else
+ echo
+fi
+
+
+read veglegesit
+done
+
+fi
+clear
+echo
+echo "			A Te rendelesed: "
+echo
+
+echo -n "			Foetel: "
+case $foetel in    
+    1) echo "Dinofalatkak"  ;;
+    2) echo "Husleves"  ;;
+    3) echo "Columbo" ;;
+    4) echo "Nokedli" ;;
+    5) echo "Gyumolcsleves" ;;
+esac
+sleep 1;
+
+echo -n "			Ital: "
+case $ital in    
+    1) echo "Kubu"  ;;
+    2) echo "Cappy"  ;;
+    3) echo "Lipton Tea" ;;
+    4) echo "Nestea" ;;
+    5) echo "Columbina JR" ;;
+    6) echo "Almale" ;;
+esac
+sleep 1;
+
+
+
+if [ "$kerdes" = "igen" ]; then
+echo -n "			Desszert: "
+case $desszert in    
+    1) echo "Pite"  ;;
+    2) echo "Somloi"  ;;
+    3) echo "Palacsinta" ;;
+    4) echo "Fagylalt" ;;
+    5) echo "Columbo kope" ;;
+esac
+
+else
+echo
+
+fi
+sleep 1;
+echo
+echo "		Rendelesedrol az ertesitest emailben fogunk kuldeni amint kesz lesz!"
+echo "		Koszonjuk, hogy minket valasztottal!"    
+
+fi
+
+
 
 
 
