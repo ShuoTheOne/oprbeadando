@@ -216,11 +216,217 @@ echo "Rendeleserol emailben ertesitjuk, amint elkeszult!"
 sleep 1;
 echo
 
+#itt kezdodik a rendelesmodositas
 else
 echo
+while [ "$veglegesit" = "nem" ]
+do  
+clear
+echo
+echo  "Min szeretne valtoztatni? (Foetel / Ital / Desszert)"
+echo "	/	|--------------------|		/"
+echo "	/	| 	Foetel       |		/"
+echo "	/	| 	Ital         |		/"
+echo "	/	| 	Desszert     |		/"
+echo "	/	|____________________|		/"
+ 
+read valtoztat
+if [ "$valtoztat" = "Foetel" ]; then
+clear
+echo
+echo -n "			Jelenlegi kivalasztott foetele: "
+case $foetel in    
+    1) echo "Ragu"  ;;
+    2) echo "Husleves"  ;;
+    3) echo "Columbo" ;;
+    4) echo "Paprikas" ;;
+    5) echo "Gyumolcsleves" ;;
+esac
+sleep 2;
+echo "Mire szeretne valtoztatni a foetelet? (1-5)"
+
+echo "	/	|----------------------|	/"
+echo "	/	| 1)	Ragu	       |	/"
+echo "	/	| 2)	Husleves       |	/"
+echo "	/	| 3)	Columbo        |	/"
+echo "	/	| 4)	Paprikas       |	/"
+echo "	/	| 5)	Gyumolcsleves  |	/"
+echo "	/	|______________________|	/"
+
+read foetel
+
+while [ "$foetel" -gt 5 ]
+do  
+echo  "Adjon meg 1-5ig szamot!"
+read foetel
+done
+
+else
+echo 
+fi
+ 
+if [ "$valtoztat" = "Ital" ]; then
+clear
+echo
+echo -n "			Jelenlegi kivalasztott itala: "
+case $ital in    
+    1) echo "Gyumolcsle"  ;;
+    2) echo "Sor"  ;;
+    3) echo "Tequila" ;;
+    4) echo "Bor" ;;
+    5) echo "Columbina" ;;
+    6) echo "Pine colada" ;;
+esac
+sleep 2;
+echo "Mire szeretne valtoztatni az italat? (1-6)"
+
+echo "	/	|-------------------|		/"
+echo "	/	| 1)	Gyumolcsle  |		/"
+echo "	/	| 2)	Sor  	    |		/"
+echo "	/	| 3)	Tequila     |		/"
+echo "	/	| 4)	Bor 	    |		/"
+echo "	/	| 5)	Columbina   |		/"
+echo "	/	| 6)	Pine Colada |		/"
+echo "	/	|___________________|		/"
+
+read ital
+
+while [ "$ital" -gt 6 ]
+do  
+echo  "Adjon meg 1-6ig szamot!"
+read ital
+done
+
 fi
 
-    #insert email kuldo progi here es stickrajz
+
+if [ "$valtoztat" = "Desszert" ]; then
+clear
+echo
+echo -n "			Jelenlegi kivalasztott desszertje: "
+case $desszert in    
+    1) echo "Pite"  ;;
+    2) echo "Somloi"  ;;
+    3) echo "Palacsinta" ;;
+    4) echo "Fagylalt" ;;
+    5) echo "Columbo kope" ;;
+esac
+sleep 2;
+echo "Mire szeretne valtoztatni a desszertjet? (1-5)"
+
+echo "	/	|--------------------|		/"
+echo "	/	| 1)	Pite         |		/"
+echo "	/	| 2)	Somloi       |		/"
+echo "	/	| 3)	Palacsinta   |		/"
+echo "	/	| 4)	Fagylalt     |		/"
+echo "	/	| 5)	Columbo kope |		/"
+echo "	/	|____________________|		/"
+
+read desszert
+
+while [ "$desszert" -gt 5 ]
+do  
+echo  "Adjon meg 1-5ig szamot!"
+read desszert
+done
+
+fi
+
+sleep 1;
+clear
+echo
+echo "			Rendeles veglegesitese: (igen/nem)"
+echo
+
+echo -n "			Foetel: "
+case $foetel in    
+    1) echo "Ragu"  ;;
+    2) echo "Husleves"  ;;
+    3) echo "Columbo" ;;
+    4) echo "Paprikas" ;;
+    5) echo "Gyumolcsleves" ;;
+esac
+sleep 1;
+
+echo -n "			Ital: "
+case $ital in    
+    1) echo "Gyumolcsle"  ;;
+    2) echo "Sor"  ;;
+    3) echo "Tequila" ;;
+    4) echo "Bor" ;;
+    5) echo "Columbina" ;;
+    6) echo "Pine colada" ;;
+esac
+sleep 1;
+
+
+
+if [ "$kerdes" = "igen" ]; then
+echo -n "			Desszert: "
+case $desszert in    
+    1) echo "Pite"  ;;
+    2) echo "Somloi"  ;;
+    3) echo "Palacsinta" ;;
+    4) echo "Fagylalt" ;;
+    5) echo "Columbo kope" ;;
+esac
+else
+ echo
+fi
+
+
+read veglegesit
+done
+
+fi
+clear
+echo
+echo "			Az On rendelese: "
+echo
+
+echo -n "			Foetel: "
+case $foetel in    
+    1) echo "Ragu"  ;;
+    2) echo "Husleves"  ;;
+    3) echo "Columbo" ;;
+    4) echo "Paprikas" ;;
+    5) echo "Gyumolcsleves" ;;
+esac
+sleep 1;
+
+echo -n "			Ital: "
+case $ital in    
+    1) echo "Gyumolcsle"  ;;
+    2) echo "Sor"  ;;
+    3) echo "Tequila" ;;
+    4) echo "Bor" ;;
+    5) echo "Columbina" ;;
+    6) echo "Pine colada" ;;
+esac
+sleep 1;
+
+
+
+if [ "$kerdes" = "igen" ]; then
+echo -n "			Desszert: "
+case $desszert in    
+    1) echo "Pite"  ;;
+    2) echo "Somloi"  ;;
+    3) echo "Palacsinta" ;;
+    4) echo "Fagylalt" ;;
+    5) echo "Columbo kope" ;;
+esac
+
+else
+echo
+
+fi
+sleep 1;
+echo
+echo "		Rendeleserol az ertesitest emailben fogunk kuldeni amint kesz lesz!"
+echo "		Koszonjuk, hogy minket valasztott!"    
+
+#insert email kuldo progi here es stickrajz
 
 sendmail "$email" < email.txt
 
