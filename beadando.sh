@@ -218,11 +218,12 @@ while [ "$veglegesit" = "nem" ]
 do  
 clear
 echo
-echo  "Min szeretne valtoztatni? Foetel / Ital"
+echo -n  "Min szeretne valtoztatni? Foetel / Ital"
  if [ "$kerdes" = "igen" ]; then
-echo -n " / Desszert"
+echo " / Desszert"
  fi
 
+echo
 echo "	/	|--------------------|		/"
 echo "	/	| 	Foetel       |		/"
 echo "	/	| 	Ital         |		/"
@@ -588,7 +589,7 @@ case $ital in
     5) echo "Columbina JR" ;;
     6) echo "Almale" ;;
 esac
-sleep 1;
+sleep 2;
 
 
 
@@ -623,11 +624,12 @@ while [ "$veglegesit" = "nem" ]
 do  
 clear
 echo
-echo  "Min szeretnel valtoztatni? Foetel / Ital"
+echo -n  "Min szeretnel valtoztatni? Foetel / Ital"
  if [ "$kerdes" = "igen" ]; then
-echo -n " / Desszert"
+echo  " / Desszert"
  fi
 
+echo
 echo "	/	|--------------------|		/"
 echo "	/	| 	Foetel       |		/"
 echo "	/	| 	Ital         |		/"
@@ -684,7 +686,7 @@ case $ital in
     5) echo "Columbina JR" ;;
     6) echo "Almale" ;;
 esac
-sleep 2;
+sleep 1;
 echo "Mire szeretned megvaltoztatni az italodat? (1-6)"
 
 echo "	/	|--------------------|		/"
