@@ -210,11 +210,6 @@ read veglegesit
 
 if [ "$veglegesit" = "igen" ]; then
 echo
-echo "Koszonjuk rendeleset!"
-sleep 2;
-echo "Rendeleserol emailben ertesitjuk, amint elkeszult!"
-sleep 1;
-echo
 
 #itt kezdodik a rendelesmodositas
 else
@@ -223,11 +218,17 @@ while [ "$veglegesit" = "nem" ]
 do  
 clear
 echo
-echo  "Min szeretne valtoztatni? (Foetel / Ital / Desszert)"
+echo  "Min szeretne valtoztatni? Foetel / Ital"
+ if [ "$kerdes" = "igen" ]; then
+echo -n " / Desszert"
+ fi
+
 echo "	/	|--------------------|		/"
 echo "	/	| 	Foetel       |		/"
 echo "	/	| 	Ital         |		/"
+ if [ "$kerdes" = "igen" ]; then
 echo "	/	| 	Desszert     |		/"
+ fi
 echo "	/	|____________________|		/"
  
 read valtoztat
@@ -299,7 +300,7 @@ done
 
 fi
 
-
+if [ "$kerdes" = "igen" ];then
 if [ "$valtoztat" = "Desszert" ]; then
 clear
 echo
@@ -330,6 +331,7 @@ echo  "Adjon meg 1-5ig szamot!"
 read desszert
 done
 
+fi
 fi
 
 sleep 1;
@@ -481,7 +483,7 @@ case $foetel in
 esac
 
 echo; sleep 2;
-echo  "Kituno valasztas, $n!"; sleep 1;
+echo  "	Kituno valasztas, $n!"; sleep 1;
 echo
 clear
 echo
@@ -612,11 +614,6 @@ read veglegesit
 
 if [ "$veglegesit" = "igen" ]; then
 echo
-echo "Koszonjuk rendelesed!"
-sleep 2;
-echo "Rendelesedrol emailben ertesitunk, amint elkeszult!"
-sleep 1;
-echo
 
 else
 echo
@@ -626,11 +623,17 @@ while [ "$veglegesit" = "nem" ]
 do  
 clear
 echo
-echo  "Min szeretnel valtoztatni? (Foetel / Ital / Desszert)"
+echo  "Min szeretnel valtoztatni? Foetel / Ital"
+ if [ "$kerdes" = "igen" ]; then
+echo -n " / Desszert"
+ fi
+
 echo "	/	|--------------------|		/"
 echo "	/	| 	Foetel       |		/"
 echo "	/	| 	Ital         |		/"
+ if [ "$kerdes" = "igen" ]; then
 echo "	/	| 	Desszert     |		/"
+ fi
 echo "	/	|____________________|		/"
  
 read valtoztat
@@ -703,7 +706,7 @@ done
 
 fi
 
-
+if [ "$kerdes" = "igen" ]; then
 if [ "$valtoztat" = "Desszert" ]; then
 clear
 echo
@@ -734,6 +737,7 @@ echo  "Adj meg 1-5ig szamot!"
 read desszert
 done
 
+fi
 fi
 
 sleep 1;
