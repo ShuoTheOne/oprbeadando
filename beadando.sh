@@ -1,33 +1,17 @@
 #!/bin/bash
 clear
 
-echo  "Etterem V1.0" ; sleep 1 ;
-echo  "Made by: Vasas Csaba" ; sleep 1 ;
 
 
-while getopts 'fn' nem
-do
-    case $nem in
-    f)echo  "Neme: Ferfi" ;;
-    n)echo  "Neme: No" ;;
-esac
+while getopts 'n:e:' adatok; do
+    case "$adatok" in
+    n) n=${OPTARG}
+	echo "A neve: $n";;
+    e) e=${OPTARG}
+	echo "$e eves";;
+    esac
 done
 
-echo -n "Adja meg a nevet: "
-read n
-
-
-
-echo -n "Adja meg az eletkorat: "
-read e
-
-echo -n "Adja meg az email cimet: "
-read email
-
-clear
-echo 
-echo "	Koszontjuk ettermunkben, $n"
-echo
 
 
 
